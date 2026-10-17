@@ -1,5 +1,6 @@
 package com.example.activity4
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -15,5 +16,7 @@ fun act4(modifier: Modifier = Modifier) {
     var nama by remember { mutableStateOf("")}
     var alamat by remember { mutableStateOf("")}
     var jenis by remember { mutableStateOf("")}
+    var gender:List<String> = listOf("Laki-Laki", "perempuan")
+
 
 }
