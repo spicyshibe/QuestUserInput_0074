@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun act4(modifier: Modifier = Modifier) {
     var textNama by remember { mutableStateOf("")}
+    var textAlamat by remember { mutableStateOf("")}
 
 
 }
