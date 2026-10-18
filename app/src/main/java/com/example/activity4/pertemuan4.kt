@@ -1,5 +1,6 @@
 package com.example.activity4
 
+import android.R.attr.text
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -46,14 +47,15 @@ fun act4(modifier: Modifier = Modifier) {
             singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
-            label = { Text(text = "Nama")},
+            label = { Text(text = "Nama") },
             onValueChange = {
                 textNama = it
             }
         )
         Row {
             gender.forEach { item ->
-                Row(modifier = Modifier.selectable(
+                Row(
+                    modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = { textJK = item }
                 ), verticalAlignment = Alignment.CenterVertically) {
@@ -71,7 +73,7 @@ fun act4(modifier: Modifier = Modifier) {
             value = textAlamat,
             singleLine = true,
             modifier = Modifier.width(250.dp),
-            label = { Text(text = "Alamat")},
+            label = { Text(text = "Alamat") },
             onValueChange = {
                 textAlamat = it
             }
@@ -95,6 +97,23 @@ fun act4(modifier: Modifier = Modifier) {
         ) {
             Text(stringResource(R.string.submit))
         }
+        HorizontalDivider(
+            modifier = Modifier.padding(
+                bottom = dimensionResource(R.dimen.padding_medium),
+                top = dimensionResource(R.dimen.padding_medium)
+            ),
+            thickness = dimensionResource(R.dimen.devider_tipis),
+            color = Color.DarkGray
+        )
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
+        ) {
+            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
+                Text(text = "Nama: " + nama, color = Color.Black)
+                Text(text = "Gender: " + jenis, color = Color.Black)
+                Text(text = "Alamat: " + alamat, color = Color.Black)
+            }
+        }
 
-
+    }
 }
